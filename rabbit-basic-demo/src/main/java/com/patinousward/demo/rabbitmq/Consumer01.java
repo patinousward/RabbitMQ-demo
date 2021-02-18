@@ -30,6 +30,7 @@ public class Consumer01 {
             }
         };
         channel.basicConsume("maxcompute-spark", false, "01", defaultConsumer);
+        // TODO: 2021/2/18 不能直接close，否则没消费到就关闭了
         System.out.println("----------");
     }
 }
