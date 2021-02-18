@@ -22,7 +22,7 @@ public class Consumer01 {
 
                     // TODO: 2021/2/18  如果不是next状态，说明顺序有问题，重新丢回队列中即可
 
-                    // TODO: 2021/2/18 通过expiration 的设置进行判断，如果设置时间过期，说明直接丢弃消息即可
+                    // TODO: 2021/2/18 通过expiration 的设置进行判断，如果设置时间过期，说明直接丢弃消息即可（因为可能已经没有reuest参数了，只能丢掉）
                     System.out.println(properties.getExpiration());
                     System.out.println("consumer01:" + new String(body, StandardCharsets.UTF_8));
                     channel.basicAck(envelope.getDeliveryTag(), false);
